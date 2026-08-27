@@ -1,0 +1,29 @@
+/* styles.css — basic layout and reset to ensure index.html loads styles correctly */
+:root{
+  --container-max:1100px;
+  --accent:#1a73e8;
+  --muted:#666;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{height:100%;font-family: "IBM Plex Sans", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;line-height:1.4;color:#111}
+.container{max-width:var(--container-max);margin:0 auto;padding:24px}
+header{background:#fff;border-bottom:1px solid #eee}
+.nav-container{display:flex;align-items:center;justify-content:space-between}
+.brand{display:flex;align-items:center;gap:8px}
+.brand-logo{background:var(--accent);color:#fff;width:40px;height:40px;display:flex;align-items:center;justify-content:center;border-radius:8px;font-weight:700}
+.nav-links{list-style:none;display:flex;gap:16px;align-items:center}
+.nav-links a{text-decoration:none;color:inherit}
+.cta-btn{background:var(--accent);color:#fff;padding:8px 12px;border-radius:6px;text-decoration:none}
+.hero{padding:64px 0;background:linear-gradient(180deg,#f8fbff,#fff)}
+.hero h1{font-size:2rem}
+.sidebar-toc{position:sticky;top:24px;padding:16px;border-right:1px solid #f0f0f0}
+.content-section{margin-bottom:32px}
+.footer-grid{display:flex;gap:24px}
+.footer-bottom{margin-top:16px;border-top:1px solid #eee;padding-top:16px;color:var(--muted);font-size:0.9rem}
+/* Mobile nav */
+.mobile-nav-toggle{display:none}
+@media(max-width:768px){
+  .nav-links{position:fixed;left:0;top:0;right:0;background:#fff;flex-direction:column;padding:48px 16px;transform:translateY(-100%);transition:transform .25s ease}
+  .nav-links.active{transform:translateY(0)}
+  .mobile-nav-toggle{display:block;background:none;border:0;font-size:1.25rem}
+}
