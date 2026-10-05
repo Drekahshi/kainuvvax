@@ -1,0 +1,108 @@
+@import "tailwindcss";
+
+@theme {
+  /* Greens */
+  --color-green-950: #07170E;
+  --color-green-900: #0C2818;   /* Deep Green */
+  --color-green-850: #10321F;
+  --color-green-800: #174026;
+  --color-green-700: #28603D;   /* Forest Green */
+  --color-green-600: #3A7A52;
+  --color-green-500: #55966B;
+  --color-green-300: #A8D1B6;
+  --color-green-200: #CFE3D5;
+  --color-green-100: #E4EFE7;
+  --color-green-50:  #F2F7F4;   /* Fresh Botanical Page Background */
+
+  /* Lime accent */
+  --color-lime-500: #C7EA46;
+  --color-lime-400: #D4F06E;
+  --color-lime-700: #8FAE1F;
+
+  /* Gold accent */
+  --color-gold-500: #C6A15B;
+  --color-gold-700: #8F6E2E;
+  --color-gold-100: #F3EAD6;
+
+  /* Neutrals (tinted with subtle botanical green) */
+  --color-sand-50:  #F7FAF8;
+  --color-sand-100: #F2F7F4;    /* Default Botanical Green Background */
+  --color-sand-200: #E4EFE7;    /* Soft Green-Tinted Surface */
+  --color-sand-300: #C9DC CE;
+  --color-ink-900:  #0C2818;    /* Deep Forest ink */
+  --color-ink-600:  #2D4F3B;    /* Muted Forest ink */
+  --color-ink-400:  #5B7B6A;    /* Faint Sage ink */
+
+  /* Status */
+  --color-success: #28603D;
+  --color-warning: #B7791F;
+  --color-danger:  #B3382C;
+  --color-info:    #2F6F8F;
+
+  /* Fonts */
+  --font-fraunces: var(--font-fraunces), Georgia, serif;
+  --font-inter: var(--font-inter), sans-serif;
+  --font-mono: var(--font-mono), monospace;
+}
+
+:root {
+  --bg:            var(--color-green-50);
+  --bg-raised:     #FFFFFF;
+  --bg-muted:      var(--color-green-100);
+  --bg-inverse:    var(--color-green-900);
+  --text:          var(--color-ink-900);
+  --text-muted:    var(--color-ink-600);
+  --text-inverse:  var(--color-green-50);
+  --brand:         var(--color-green-700);
+  --brand-hover:   var(--color-green-800);
+  --accent:        var(--color-lime-500);
+  --border:        var(--color-green-200);
+  --border-inverse: rgba(207, 227, 213, 0.2);
+  --focus-ring:    var(--color-lime-500);
+}
+
+/* Base Styles */
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 80px;
+  background-color: var(--color-green-50);
+  color: var(--color-ink-900);
+}
+
+body {
+  font-family: var(--font-inter);
+  background-color: var(--color-green-50);
+  color: var(--color-ink-900);
+  line-height: 1.65;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Typography styles */
+.font-heading {
+  font-family: var(--font-fraunces);
+}
+
+.font-mono-data {
+  font-family: var(--font-mono);
+}
+
+/* Accessible focus ring on all interactive elements */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+  outline: 3px solid var(--color-lime-500) !important;
+  outline-offset: 2px !important;
+}
+
+/* Reduced motion preference fallback */
+@media (prefers-reduced-motion: reduce) {
+  *, ::before, ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
